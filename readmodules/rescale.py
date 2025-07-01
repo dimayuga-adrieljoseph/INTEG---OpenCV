@@ -10,6 +10,6 @@ def rescaleFrame(frame, scale = 0.75):
     return cv.resize(frame, dimensions, interpolation=cv.INTER_AREA)
 
 # for live video
-def changeRes(width, height):
-    capture.set(3, width)
-    capture.set(4, height)
+def changeRes(capture, width, height):
+    capture.set(cv.CAP_PROP_FRAME_WIDTH, width)
+    capture.set(cv.CAP_PROP_FRAME_HEIGHT, height)
